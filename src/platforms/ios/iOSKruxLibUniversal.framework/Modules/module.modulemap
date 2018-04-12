@@ -1,0 +1,9 @@
+framework module iOSKruxLibUniversal {
+    umbrella header "../Headers/KruxTracker.h"
+
+    link framework "AdSupport.framework"
+    link framework "SystemConfiguration.framework"
+
+    export *
+    module * { export * }
+}
