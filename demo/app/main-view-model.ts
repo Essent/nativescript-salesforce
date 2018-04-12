@@ -14,6 +14,8 @@ export class HelloWorldModel extends Observable {
     this.message = this.salesforce.message;
 
     console.log("KruxTracker: " + KruxTracker);
-    var kt = KruxTracker.sharedEventTrackerWithConfigIdDebugFlagDryRunFlag('abcdefghij', true, false);
+
+    var kt = KruxTracker.sharedEventTrackerWithConfigIdDebugFlagDryRunFlag('abcdcdba', true, false);
+    console.log("kt: " + kt);
   }
 }

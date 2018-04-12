@@ -1,5 +1,15 @@
 framework module iOSKruxLibUniversal {
-    umbrella header "../Headers/KruxTracker.h"
+    module KruxTracker {
+        header "../Headers/KruxTracker.h"
+    }
+
+    module KruxTrackerController {
+        header "../Headers/KruxTrackerController.h"
+    }
+
+    module KruxConsentCallback {
+        header "../Headers/KruxConsentCallback.h"
+    }
 
     link framework "AdSupport.framework"
     link framework "SystemConfiguration.framework"
