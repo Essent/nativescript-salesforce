@@ -12,5 +12,9 @@ android {
   }  
   aaptOptions {  
     additionalParameters "--no-version-vectors"  
-  }  
+  }
 } 
+
+dependencies {
+    compile 'com.google.android.gms:play-services-ads:10.2.4'
+}
