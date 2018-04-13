@@ -5,7 +5,7 @@ declare const KruxTracker;
 export class SalesForce implements CommonSalesForce {
 
     private static instance: SalesForce = new SalesForce();
-    private kruxTracker: KruxTracker;
+    private kruxTracker: any;
 
     constructor() {
         if (SalesForce.instance) {
