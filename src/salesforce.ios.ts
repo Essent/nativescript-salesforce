@@ -1,10 +1,9 @@
 import { CommonSalesForce } from './salesforce.common';
 
-declare const KruxTracker: any;
-
 export class SalesForce implements CommonSalesForce {
 
     private static instance: SalesForce = new SalesForce();
+    private kruxTracker: KruxTracker;
 
     constructor() {
         if (SalesForce.instance) {
@@ -18,6 +17,14 @@ export class SalesForce implements CommonSalesForce {
     }
 
     public initialize(configId: string, debug: boolean): void {
-        var kt = KruxTracker.sharedEventTrackerWithConfigIdDebugFlagDryRunFlag(configId, debug, false);
+        this.kruxTracker = KruxTracker.sharedEventTrackerWithConfigIdDebugFlagDryRunFlag(configId, debug, false);
+    }
+
+    public trackPageView(page: string, pageAttributes: any, userAttributes: any): void {
+        this.kruxTracker.trackPageViewPageAttributesUserAttributes(page, pageAttributes, userAttributes);
+    }
+
+    public fireEvent(event: string, eventAttributes: any): void {
+        this.kruxTracker.fireEventEventAttributesWithError(event, eventAttributes);
     }
 }
