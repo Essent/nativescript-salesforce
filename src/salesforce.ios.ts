@@ -1,5 +1,7 @@
 import { CommonSalesForce } from './salesforce.common';
 
+declare const KruxTracker;
+
 export class SalesForce implements CommonSalesForce {
 
     private static instance: SalesForce = new SalesForce();
