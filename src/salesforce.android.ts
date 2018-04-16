@@ -1,4 +1,4 @@
-import { CommonSalesForce } from './salesforce.common';
+import { CommonSalesForce, KeyValue } from './salesforce.common';
 import * as application from 'tns-core-modules/application';
 
 declare const com: any;
@@ -21,7 +21,7 @@ export class SalesForce implements CommonSalesForce {
 
     public initialize(configId: string, debug: boolean): void {
         let kruxSegmentsCallback = new com.krux.androidsdk.aggregator.KruxSegments({
-            getSegments: (segments: string) => {
+            getSegments: (_segments: string) => {
                 // Do something with segments.
             }
         });
@@ -29,10 +29,23 @@ export class SalesForce implements CommonSalesForce {
     }
 
     public trackPageView(page: string, pageAttributes: any, userAttributes: any): void {
-        this.kruxEventAggregator.trackPageView(page, pageAttributes, userAttributes)
+        this.kruxEventAggregator.trackPageView(page, this.keyValuesToBundle(pageAttributes), this.keyValuesToBundle(userAttributes));
     }
 
     public fireEvent(event: string, eventAttributes: any): void {
-        this.kruxEventAggregator.fire(event, eventAttributes);
+        this.kruxEventAggregator.fireEvent(event, this.keyValuesToBundle(eventAttributes));
+    }
+
+    private keyValuesToBundle(keyValues: KeyValue<any>): any {
+        if (keyValues == null) {
+            return null;
+        }
+
+        let bundle = new android.os.Bundle();
+        for (let i = 0; i < Object.keys(keyValues).length; i++) {
+            let key = Object.keys(keyValues)[i];
+            bundle.putString(key, keyValues[key]);
+        }
+        return bundle;
     }
 }
