@@ -40,5 +40,7 @@
 			</intent-filter>
 		</activity>
 		<activity android:name="com.tns.ErrorReportActivity"/>
+
+		<service android:name="com.krux.androidsdk.aggregator.EventPublisherService" android:enabled="true" />
 	</application>
 </manifest>
