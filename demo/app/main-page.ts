@@ -19,7 +19,7 @@ export function trackPageView(_args: any) {
 
 export function fireEvent(_args: any) {
     const attributes: KeyValue<string> = {
-        event_id: 'YOUR_EVENT_ID', // NOTE: this attribute is mandatory for Android
+        event_id: 'YOUR_EVENT_ID', // NOTE: this attribute is mandatory
         testKey1: 'My event test value 1',
         testKey2: 'My event test value 2'
     };
