@@ -1,7 +1,7 @@
 {
-    "name": "nativescript-salesforce",
+    "name": "@essent/nativescript-salesforce",
     "version": "1.0.0",
-    "description": "Your awesome NativeScript plugin.",
+    "description": "A NativeScript plugin to use the Salesforce DMP mobile SDK.",
     "main": "salesforce",
     "typings": "index.d.ts",
     "nativescript": {
@@ -28,19 +28,20 @@
         "prepare": "node scripts/prepare.js"
     },
     "keywords": [
+        "ecosystem:nativescript",
         "NativeScript",
         "JavaScript",
         "Android",
-        "iOS"
+        "iOS",
+        "Salesforce"
     ],
     "author": {
-        "name": "Your Name",
-        "email": "youremail@yourdomain.com"
+        "name": "Essent"
     },
     "bugs": {
         "url": "https://github.com/Essent/nativescript-salesforce/issues"
     },
-    "license": "Apache-2.0",
+    "license": "MIT",
     "homepage": "https://github.com/Essent/nativescript-salesforce",
     "readmeFilename": "README.md",
     "devDependencies": {
