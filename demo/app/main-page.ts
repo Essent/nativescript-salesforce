@@ -2,7 +2,7 @@ import * as observable from 'tns-core-modules/data/observable';
 import { SalesForce, KeyValue } from '@essent/nativescript-salesforce';
 
 export function pageLoaded(_args: observable.EventData) {
-    SalesForce.getInstance().initialize('abcdefghij', true);
+    SalesForce.getInstance().initialize('YOUR_CONFIG_ID', true);
 }
 
 export function trackPageView(_args: any) {

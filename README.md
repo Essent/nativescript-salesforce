@@ -29,14 +29,14 @@ compile 'com.google.android.gms:play-services-ads:10.2.4'
 
 ## Usage
 
-To use nativescript-ng-sentry you must first import the module:
+To use nativescript-salesforce you must first import the module:
 ```ts
 import { SalesForce, KeyValue } from '@essent/nativescript-salesforce';
 ```
 
 At the launch of your app call `initialize` with your config id:
 ```ts
-SalesForce.getInstance().initialize('abcdefghij', true);
+SalesForce.getInstance().initialize('YOUR_CONFIG_ID', true);
 ```
 
 To track page views call `trackPageView` (optionally you can use pageAttributes and userAttributes):
