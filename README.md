@@ -5,7 +5,7 @@ This is a plugin to use the Salesforce DMP SDK ([Android](https://konsole.zendes
 ## Installation
 
 Run the following command from the root of your project:
-```ts
+```sh
 tns plugin add @essent/nativescript-salesforce
 ```
 
@@ -17,13 +17,13 @@ Make sure you add the following permissions to the AndroidManifest.xml file of y
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 ```
 
-Add the following service to the application tag in the AndroidManifest.xml file of your app ([example](./demo/app/APP_Resources/Android/AndroidManifest.xml)):
+Add the following service to the application tag in the AndroidManifest.xml file of your app ([example](./demo/app/App_Resources/Android/AndroidManifest.xml)):
 ```xml
 <service android:name="com.krux.androidsdk.aggregator.EventPublisherService" android:enabled="true" />
 ```
 
-Add play-services-ads to the dependencies in the app.gradle file of your app ([example](./demo/app/APP_Resources/Android/app.gradle)):
-```
+Add play-services-ads to the dependencies in the app.gradle file of your app ([example](./demo/app/App_Resources/Android/app.gradle)):
+```groovy
 compile 'com.google.android.gms:play-services-ads:10.2.4'
 ```
 
@@ -31,7 +31,7 @@ compile 'com.google.android.gms:play-services-ads:10.2.4'
 
 To use nativescript-ng-sentry you must first import the module:
 ```ts
-mport { SalesForce, KeyValue } from '@essent/nativescript-salesforce';
+import { SalesForce, KeyValue } from '@essent/nativescript-salesforce';
 ```
 
 At the launch of your app call `initialize` with your config id:
