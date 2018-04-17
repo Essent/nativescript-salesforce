@@ -5,7 +5,7 @@ This is a plugin to use the Salesforce DMP SDK ([Android](https://konsole.zendes
 ## Installation
 
 Run the following command from the root of your project:
-```bash
+```console
 tns plugin add @essent/nativescript-salesforce
 ```
 
