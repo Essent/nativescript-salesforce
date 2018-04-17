@@ -1,11 +1,11 @@
 # NativeScript plugin for Salesforce DMP
 
-This is a plugin to use the Salesforce DMP SDK ([Android](https://konsole.zendesk.com/hc/en-us/articles/226031268-Android-SDK-Implementation-Guide) v4.3.0, [iOS](https://konsole.zendesk.com/hc/en-us/articles/219986988-iOS-SDK-Implementation-Guide) v4.3.0). To use this plugin you need to have an account from Salesforce DMP.
+This is a plugin to use the Salesforce DMP SDK ([Android](https://konsole.zendesk.com/hc/en-us/articles/226031268-Android-SDK-Implementation-Guide) v4.3.0, [iOS](https://konsole.zendesk.com/hc/en-us/articles/219986988-iOS-SDK-Implementation-Guide) v4.3.0). To use this plugin you need to have an account for Salesforce DMP.
 
 ## Installation
 
 Run the following command from the root of your project:
-```sh
+```bash
 tns plugin add @essent/nativescript-salesforce
 ```
 
@@ -23,7 +23,7 @@ Add the following service to the application tag in the AndroidManifest.xml file
 ```
 
 Add play-services-ads to the dependencies in the app.gradle file of your app ([example](./demo/app/App_Resources/Android/app.gradle)):
-```groovy
+```gradle
 compile 'com.google.android.gms:play-services-ads:10.2.4'
 ```
 
