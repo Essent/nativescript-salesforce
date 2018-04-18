@@ -1,22 +1,22 @@
-import { CommonSalesForce, KeyValue } from './salesforce.common';
+import { CommonSalesforceDMP, KeyValue } from './salesforce.common';
 import * as application from 'tns-core-modules/application';
 
 declare const com: any;
 
-export class SalesForce implements CommonSalesForce {
+export class SalesforceDMP implements CommonSalesforceDMP {
 
-    private static instance: SalesForce = new SalesForce();
+    private static instance: SalesforceDMP = new SalesforceDMP();
     private kruxEventAggregator: any = com.krux.androidsdk.aggregator.KruxEventAggregator;
 
     constructor() {
-        if (SalesForce.instance) {
+        if (SalesforceDMP.instance) {
             throw new Error("Error: Instance already created: Use Salesforce.getInstance() instead of new.");
         }
-        SalesForce.instance = this;
+        SalesforceDMP.instance = this;
     }
 
     static getInstance() {
-        return SalesForce.instance;
+        return SalesforceDMP.instance;
     }
 
     public initialize(configId: string, debug: boolean): void {

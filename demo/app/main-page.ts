@@ -1,8 +1,8 @@
 import * as observable from 'tns-core-modules/data/observable';
-import { SalesForce, KeyValue } from '@essent/nativescript-salesforce';
+import { SalesforceDMP, KeyValue } from '@essent/nativescript-salesforce';
 
 export function pageLoaded(_args: observable.EventData) {
-    SalesForce.getInstance().initialize('YOUR_CONFIG_ID', true);
+    SalesforceDMP.getInstance().initialize('YOUR_CONFIG_ID', true);
 }
 
 export function trackPageView(_args: any) {
@@ -14,7 +14,7 @@ export function trackPageView(_args: any) {
         testKey1: 'My user test value 1',
         testKey2: 'My user test value 2'
     };
-    SalesForce.getInstance().trackPageView('TestPage', attributes, attributesUser);
+    SalesforceDMP.getInstance().trackPageView('TestPage', attributes, attributesUser);
 }
 
 export function fireEvent(_args: any) {
@@ -23,5 +23,5 @@ export function fireEvent(_args: any) {
         testKey1: 'My event test value 1',
         testKey2: 'My event test value 2'
     };
-    SalesForce.getInstance().fireEvent('TestEvent', attributes);
+    SalesforceDMP.getInstance().fireEvent('TestEvent', attributes);
 }

@@ -1,21 +1,21 @@
-import { CommonSalesForce } from './salesforce.common';
+import { CommonSalesforceDMP } from './salesforce.common';
 
 declare const KruxTracker;
 
-export class SalesForce implements CommonSalesForce {
+export class SalesforceDMP implements CommonSalesforceDMP {
 
-    private static instance: SalesForce = new SalesForce();
+    private static instance: SalesforceDMP = new SalesforceDMP();
     private kruxTracker: any;
 
     constructor() {
-        if (SalesForce.instance) {
+        if (SalesforceDMP.instance) {
             throw new Error("Error: Instance already created: Use Salesforce.getInstance() instead of new.");
         }
-        SalesForce.instance = this;
+        SalesforceDMP.instance = this;
     }
 
     static getInstance() {
-        return SalesForce.instance;
+        return SalesforceDMP.instance;
     }
 
     public initialize(configId: string, debug: boolean): void {

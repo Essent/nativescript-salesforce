@@ -1,4 +1,4 @@
-export interface CommonSalesForce {
+export interface CommonSalesforceDMP {
 
     initialize(configId: string, debug: boolean): void;
 

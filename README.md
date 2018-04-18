@@ -31,17 +31,17 @@ compile 'com.google.android.gms:play-services-ads:10.2.4'
 
 To use nativescript-salesforce you must first import the module:
 ```ts
-import { SalesForce, KeyValue } from '@essent/nativescript-salesforce';
+import { SalesforceDMP, KeyValue } from '@essent/nativescript-salesforce';
 ```
 
 At the launch of your app call `initialize` with your config id:
 ```ts
-SalesForce.getInstance().initialize('YOUR_CONFIG_ID', true);
+SalesforceDMP.getInstance().initialize('YOUR_CONFIG_ID', true);
 ```
 
 To track page views call `trackPageView` (optionally you can use pageAttributes and userAttributes):
 ```ts
-SalesForce.getInstance().trackPageView('TestPage', null, null);
+SalesforceDMP.getInstance().trackPageView('TestPage', null, null);
 ```
 
 To fire events call `fireEvent`:
@@ -50,5 +50,5 @@ const attributes: KeyValue<string> = {
     event_id: 'YOUR_EVENT_ID', // this attribute is mandatory
     myKey: 'An event value'
 };
-SalesForce.getInstance().fireEvent('TestEvent', attributes);
+SalesforceDMP.getInstance().fireEvent('TestEvent', attributes);
 ```
