@@ -6,7 +6,7 @@ This is a plugin to use the Salesforce DMP SDK ([Android](https://konsole.zendes
 
 Run the following command from the root of your project:
 ```console
-tns plugin add @essent/nativescript-salesforce
+tns plugin add @essent/nativescript-salesforce-dmp
 ```
 
 ## Setup (Android Only)
@@ -31,7 +31,7 @@ compile 'com.google.android.gms:play-services-ads:10.2.4'
 
 To use nativescript-salesforce you must first import the module:
 ```ts
-import { SalesforceDMP, KeyValue } from '@essent/nativescript-salesforce';
+import { SalesforceDMP, KeyValue } from '@essent/nativescript-salesforce-dmp';
 ```
 
 At the launch of your app call `initialize` with your config id:

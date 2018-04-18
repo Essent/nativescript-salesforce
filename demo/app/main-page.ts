@@ -1,5 +1,5 @@
 import * as observable from 'tns-core-modules/data/observable';
-import { SalesforceDMP, KeyValue } from '@essent/nativescript-salesforce';
+import { SalesforceDMP, KeyValue } from '@essent/nativescript-salesforce-dmp';
 
 export function pageLoaded(_args: observable.EventData) {
     SalesforceDMP.getInstance().initialize('YOUR_CONFIG_ID', true);

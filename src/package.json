@@ -1,5 +1,5 @@
 {
-    "name": "@essent/nativescript-salesforce",
+    "name": "@essent/nativescript-salesforce-dmp",
     "version": "1.0.0",
     "description": "A NativeScript plugin to use the Salesforce DMP mobile SDK.",
     "main": "salesforce",
@@ -22,7 +22,7 @@
         "demo.ios": "npm i && npm run tsc && cd ../demo && tns run ios --syncAllFiles",
         "demo.android": "npm i && npm run tsc && cd ../demo && tns run android --syncAllFiles",
         "demo.reset": "cd ../demo && rimraf platforms",
-        "plugin.prepare": "npm run tsc && cd ../demo && tns plugin remove nativescript-salesforce && tns plugin add ../src",
+        "plugin.prepare": "npm run tsc && cd ../demo && tns plugin remove nativescript-salesforce-dmp && tns plugin add ../src",
         "clean": "cd ../demo && rimraf hooks node_modules platforms && cd ../src && rimraf node_modules && npm run plugin.link",
         "ci.tslint": "npm i && tslint '**/*.ts' --config '../tslint.json' --exclude '**/node_modules/**'",
         "prepare": "node scripts/prepare.js"
@@ -39,10 +39,10 @@
         "name": "Essent"
     },
     "bugs": {
-        "url": "https://github.com/Essent/nativescript-salesforce/issues"
+        "url": "https://github.com/Essent/nativescript-salesforce-dmp/issues"
     },
     "license": "MIT",
-    "homepage": "https://github.com/Essent/nativescript-salesforce",
+    "homepage": "https://github.com/Essent/nativescript-salesforce-dmp",
     "readmeFilename": "README.md",
     "devDependencies": {
         "tns-core-modules": "^3.1.0",
