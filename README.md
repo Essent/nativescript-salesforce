@@ -29,7 +29,7 @@ compile 'com.google.android.gms:play-services-ads:10.2.4'
 
 ## Usage
 
-To use nativescript-salesforce you must first import the module:
+To use nativescript-salesforce-dmp you must first import the module:
 ```ts
 import { SalesforceDMP, KeyValue } from '@essent/nativescript-salesforce-dmp';
 ```

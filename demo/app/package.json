@@ -1,11 +1,11 @@
 {
-  "name": "nativescript-salesforce-demo",
+  "name": "nativescript-salesforce-dmp-demo",
   "main": "app.js",
   "version": "1.6.0",
   "author": {
     "name": "Essent"
   },
-  "description": "Demo app for nativescript-salesforce",
+  "description": "Demo app for nativescript-salesforce-dmp",
   "license": "Apache-2.0",
   "keywords": [
     "telerik",
@@ -19,12 +19,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/Essent/nativescript-salesforce.git"
+    "url": "git+ssh://git@github.com/Essent/nativescript-salesforce-dmp.git"
   },
   "bugs": {
-    "url": "https://github.com/Essent/nativescript-salesforce/issues"
+    "url": "https://github.com/Essent/nativescript-salesforce-dmp/issues"
   },
-  "homepage": "https://github.com/Essent/nativescript-salesforce",
+  "homepage": "https://github.com/Essent/nativescript-salesforce-dmp",
   "android": {
     "v8Flags": "--expose_gc"
   },
