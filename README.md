@@ -1,40 +1,54 @@
-# Your Plugin Name
+# NativeScript plugin for Salesforce DMP
 
-Add your plugin badges here. See [nativescript-urlhandler](https://github.com/hypery2k/nativescript-urlhandler) for example.
-
-Then describe what's the purpose of your plugin. 
-
-In case you develop UI plugin, this is where you can add some screenshots.
-
-## (Optional) Prerequisites / Requirements
-
-Describe the prerequisites that the user need to have installed before using your plugin. See [nativescript-firebase plugin](https://github.com/eddyverbruggen/nativescript-plugin-firebase) for example.
+This is a plugin to use the Salesforce DMP SDK ([Android](https://konsole.zendesk.com/hc/en-us/articles/226031268-Android-SDK-Implementation-Guide) v4.3.0, [iOS](https://konsole.zendesk.com/hc/en-us/articles/219986988-iOS-SDK-Implementation-Guide) v4.3.0). To use this plugin you need to have an account for Salesforce DMP.
 
 ## Installation
 
-Describe your plugin installation steps. Ideally it would be something like:
-
-```javascript
-tns plugin add <your-plugin-name>
+Run the following command from the root of your project:
+```console
+tns plugin add @essent/nativescript-salesforce-dmp
 ```
 
-## Usage 
+## Setup (Android Only)
 
-Describe any usage specifics for your plugin. Give examples for Android, iOS, Angular if needed. See [nativescript-drop-down](https://www.npmjs.com/package/nativescript-drop-down) for example.
-	
-	```javascript
-    Usage code snippets here
-    ```)
+Make sure you add the following permissions to the AndroidManifest.xml file of your app:
+```xml
+<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+```
 
-## API
+Add the following service to the application tag in the AndroidManifest.xml file of your app ([example](./demo/app/App_Resources/Android/AndroidManifest.xml)):
+```xml
+<service android:name="com.krux.androidsdk.aggregator.EventPublisherService" android:enabled="true" />
+```
 
-Describe your plugin methods and properties here. See [nativescript-feedback](https://github.com/EddyVerbruggen/nativescript-feedback) for example.
-    
-| Property | Default | Description |
-| --- | --- | --- |
-| some property | property default value | property description, default values, etc.. |
-| another property | property default value | property description, default values, etc.. |
-    
-## License
+Add play-services-ads to the dependencies in the app.gradle file of your app ([example](./demo/app/App_Resources/Android/app.gradle)):
+```gradle
+compile 'com.google.android.gms:play-services-ads:10.2.4'
+```
 
-Apache License Version 2.0, January 2004
+## Usage
+
+To use nativescript-salesforce-dmp you must first import the module:
+```ts
+import { SalesforceDMP, KeyValue } from '@essent/nativescript-salesforce-dmp';
+```
+
+At the launch of your app call `initialize` with your config id:
+```ts
+SalesforceDMP.getInstance().initialize('YOUR_CONFIG_ID', true);
+```
+
+To track page views call `trackPageView` (optionally you can use pageAttributes and userAttributes):
+```ts
+SalesforceDMP.getInstance().trackPageView('TestPage', null, null);
+```
+
+To fire events call `fireEvent`:
+```ts
+const attributes: KeyValue<string> = {
+    event_id: 'YOUR_EVENT_ID', // this attribute is mandatory
+    myKey: 'An event value'
+};
+SalesforceDMP.getInstance().fireEvent('TestEvent', attributes);
+```

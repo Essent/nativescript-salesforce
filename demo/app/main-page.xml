@@ -1,6 +1,9 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" class="page"
-  xmlns:ui="nativescript-salesforce">
-  <StackLayout class="p-20">
-    <Label text="{{ message }}" class="t-20 text-center c-black" textWrap="true"/>
-  </StackLayout>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" class="page" xmlns:ui="nativescript-salesforce">
+    <Page.actionBar>
+        <ActionBar title="SalesForce Demo"/>
+    </Page.actionBar>
+    <StackLayout class="p-20">
+        <Button text="Track PageView" tap="trackPageView" />
+        <Button text="Fire Event" tap="fireEvent" />
+    </StackLayout>
 </Page>
