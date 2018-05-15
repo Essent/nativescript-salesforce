@@ -1,6 +1,6 @@
 {
     "name": "@essent/nativescript-salesforce-dmp",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A NativeScript plugin to use the Salesforce DMP mobile SDK.",
     "main": "salesforce",
     "typings": "index.d.ts",
