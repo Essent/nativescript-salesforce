@@ -27,6 +27,10 @@
         "ci.tslint": "npm i && tslint '**/*.ts' --config '../tslint.json' --exclude '**/node_modules/**'",
         "prepare": "node scripts/prepare.js"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Essent/nativescript-salesforce-dmp.git"
+    },
     "keywords": [
         "ecosystem:nativescript",
         "NativeScript",
