@@ -1,5 +1,7 @@
 # NativeScript plugin for Salesforce DMP
 
+[![npm version](https://badge.fury.io/js/%40essent%2Fnativescript-salesforce-dmp.svg)](https://www.npmjs.com/package/@essent/nativescript-salesforce-dmp)
+
 This is a plugin to use the Salesforce DMP SDK ([Android](https://konsole.zendesk.com/hc/en-us/articles/226031268-Android-SDK-Implementation-Guide) v4.3.0, [iOS](https://konsole.zendesk.com/hc/en-us/articles/219986988-iOS-SDK-Implementation-Guide) v4.3.0). To use this plugin you need to have an account for Salesforce DMP.
 
 ## Installation
