@@ -25,7 +25,23 @@ export class SalesforceDMP implements CommonSalesforceDMP {
                 // Do something with segments.
             }
         });
-        this.kruxEventAggregator.initialize(application.android.context, configId, kruxSegmentsCallback , debug);
+
+        let kruxConsentCallback = new com.krux.androidsdk.aggregator.KruxConsentCallback({
+            handleConsentGetResponse: (consentGetResponse: string) => {
+                console.log('handleConsentGetResponse', consentGetResponse);
+            },
+            handleConsentGetError: (consentGetError: string) => {
+                console.log('handleConsentGetError', consentGetError);
+            },
+            handleConsentSetResponse: (consentSetResponse: string) => {
+                console.log('handleConsentSetResponse', consentSetResponse);
+            },
+            handleConsentSetError: (consentSetError: string) => {
+                console.log('handleConsentSetError', consentSetError);
+            }
+        });
+
+        this.kruxEventAggregator.initialize(application.android.context, configId, kruxSegmentsCallback , debug, kruxConsentCallback);
     }
 
     public trackPageView(page: string, pageAttributes: any, userAttributes: any): void {
@@ -34,6 +50,21 @@ export class SalesforceDMP implements CommonSalesforceDMP {
 
     public fireEvent(event: string, eventAttributes: any): void {
         this.kruxEventAggregator.fireEvent(event, this.keyValuesToBundle(eventAttributes));
+    }
+
+    public setConsent(): void {
+        let attributeBundle = new android.os.Bundle();
+        attributeBundle.putInt("dc", 1);
+        attributeBundle.putInt("al", 1);
+        attributeBundle.putInt("tg", 1);
+        attributeBundle.putInt("cd", 1);
+        attributeBundle.putInt("sh", 1);
+        attributeBundle.putInt("re", 1);
+        this.kruxEventAggregator.consentSetRequest(attributeBundle);
+    }
+
+    public getConsent(): void {
+        this.kruxEventAggregator.consentGetRequest(null);
     }
 
     private keyValuesToBundle(keyValues: KeyValue<any>): any {

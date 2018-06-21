@@ -1,13 +1,9 @@
 /* Include.gradle configuration: http://docs.nativescript.org/plugins/plugins#includegradle-specification */
 
 android {
-	productFlavors {
-        "nativescript-salesforce" {
-            dimension "nativescript-salesforce"
-        }
-    }
+	
 }
 
 dependencies {
-    compile(name: 'krux-java-android-sdk-4.3.0', ext: 'aar')
+    compile(name: 'krux-java-android-sdk-4.3.2', ext: 'aar')
 }

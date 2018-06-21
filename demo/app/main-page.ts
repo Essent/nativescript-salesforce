@@ -25,3 +25,11 @@ export function fireEvent(_args: any) {
     };
     SalesforceDMP.getInstance().fireEvent('TestEvent', attributes);
 }
+
+export function setConsent(_args: any) {
+    SalesforceDMP.getInstance().setConsent();
+}
+
+export function getConsent(_args: any) {
+    SalesforceDMP.getInstance().getConsent();
+}

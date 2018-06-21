@@ -5,6 +5,10 @@ export interface CommonSalesforceDMP {
     trackPageView(page: string, pageAttributes: any, userAttributes: any): void;
 
     fireEvent(event: string, eventAttributes: any): void;
+
+    setConsent(): void;
+
+    getConsent(): void;
 }
 
 export interface KeyValue<T> {

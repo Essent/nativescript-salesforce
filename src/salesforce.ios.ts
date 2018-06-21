@@ -29,4 +29,12 @@ export class SalesforceDMP implements CommonSalesforceDMP {
     public fireEvent(event: string, eventAttributes: any): void {
         this.kruxTracker.fireEventEventAttributesWithError(event, eventAttributes);
     }
+
+    public setConsent(): void {
+
+    }
+
+    public getConsent(): void {
+
+    }
 }
