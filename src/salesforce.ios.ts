@@ -1,6 +1,7 @@
 import { CommonSalesforceDMP } from './salesforce.common';
 
 declare const KruxTracker;
+declare const KruxConsentCallback;
 
 export class SalesforceDMP implements CommonSalesforceDMP {
 
