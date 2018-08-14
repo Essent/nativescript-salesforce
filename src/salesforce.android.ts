@@ -38,6 +38,12 @@ export class SalesforceDMP implements CommonSalesforceDMP {
             },
             handleConsentSetError: (consentSetError: string) => {
                 console.log('handleConsentSetError', consentSetError);
+            },
+            handleConsumerRemoveResponse: (removeResponse: string) => {
+                console.log('handleConsumerRemoveResponse', removeResponse);
+            },
+            handleConsumerRemoveError: (removeError: string) => {
+                console.log('handleConsumerRemoveError', removeError);
             }
         });
 
@@ -53,18 +59,24 @@ export class SalesforceDMP implements CommonSalesforceDMP {
     }
 
     public setConsent(): void {
+        // set all possible values to 1 except "Sharing Data" (sh) which should be 0
         let attributeBundle = new android.os.Bundle();
+        attributeBundle.putInt("pr", 1);
         attributeBundle.putInt("dc", 1);
         attributeBundle.putInt("al", 1);
         attributeBundle.putInt("tg", 1);
         attributeBundle.putInt("cd", 1);
-        attributeBundle.putInt("sh", 1);
+        attributeBundle.putInt("sh", 0);
         attributeBundle.putInt("re", 1);
         this.kruxEventAggregator.consentSetRequest(attributeBundle);
     }
 
     public getConsent(): void {
         this.kruxEventAggregator.consentGetRequest(null);
+    }
+
+    public removeConsent(): void {
+        this.kruxEventAggregator.consumerRemoveRequest(null);
     }
 
     private keyValuesToBundle(keyValues: KeyValue<any>): any {

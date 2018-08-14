@@ -9,6 +9,8 @@ export interface CommonSalesforceDMP {
     setConsent(): void;
 
     getConsent(): void;
+
+    removeConsent(): void;
 }
 
 export interface KeyValue<T> {
