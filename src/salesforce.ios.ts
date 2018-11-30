@@ -50,7 +50,7 @@ export class SalesforceDMP implements CommonSalesforceDMP {
     }
 
     public removeConsent(): void {
-
+        this.kruxTracker.consumerRemoveRequest(null);
     }
 }
 
