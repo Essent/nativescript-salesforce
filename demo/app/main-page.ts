@@ -33,3 +33,6 @@ export function setConsent(_args: any) {
 export function getConsent(_args: any) {
     SalesforceDMP.getInstance().getConsent();
 }
+export function removeConsent(_args: any) {
+    SalesforceDMP.getInstance().removeConsent();
+}

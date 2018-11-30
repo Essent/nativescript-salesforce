@@ -7,5 +7,6 @@
         <Button text="Fire Event" tap="fireEvent" />
         <Button text="Set Consent" tap="setConsent" />
         <Button text="Get Consent" tap="getConsent" />
+        <Button text="Remove Consent" tap="removeConsent" />
     </StackLayout>
 </Page>
