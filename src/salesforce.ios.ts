@@ -35,13 +35,13 @@ export class SalesforceDMP implements CommonSalesforceDMP {
     public setConsent(): void {
         // set all possible values to 1 except "Sharing Data" (sh) which should be 0
         let consentAttributes = NSMutableDictionary.alloc().init();
-        consentAttributes.setValueForKey("pr", "1");
-        consentAttributes.setValueForKey("dc", "1");
-        consentAttributes.setValueForKey("al", "1");
-        consentAttributes.setValueForKey("tg", "1");
-        consentAttributes.setValueForKey("cd", "1");
-        consentAttributes.setValueForKey("sh", "0");
-        consentAttributes.setValueForKey("re", "1");
+        consentAttributes.setValueForKey("1","pr");
+        consentAttributes.setValueForKey("1","dc");
+        consentAttributes.setValueForKey("1","al");
+        consentAttributes.setValueForKey("1","tg");
+        consentAttributes.setValueForKey("1","cd");
+        consentAttributes.setValueForKey("0","sh");
+        consentAttributes.setValueForKey("1","re");
         this.kruxTracker.consentSetRequest(consentAttributes)
     }
 
