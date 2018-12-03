@@ -57,35 +57,27 @@ export class SalesforceDMP implements CommonSalesforceDMP {
 export class KruxConsentCallbackImpl extends NSObject {
     public static ObjCProtocols: Object = [KruxConsentCallback];
 
-    public handleConsentGetResponse(consentGetResponse: string): void {
-        console.log('handleConsentGetResponse', consentGetResponse);
+    public handleConsentGetResponse(_consentGetResponse: string): void {
     }
 
-    public handleConsentGetError(consentGetError: string): void {
-        console.log('handleConsentGetError', consentGetError);
+    public handleConsentGetError(_consentGetError: string): void {
     }
 
-    public handleConsentSetError(consentSetError: string): void {
-        console.log('handleConsentSetError', consentSetError);
+    public handleConsentSetError(_consentSetError: string): void {
     }
 
-    public handleConsentSetResponse(consentSetResponse: string): void {
-        console.log('handleConsentSetResponse', consentSetResponse);
+    public handleConsentSetResponse(_consentSetResponse: string): void {
     }
 
-    public handleConsumerPortabilityError(consumerPortabilityError: string): void {
-        console.log('handleConsumerPortabilityError', consumerPortabilityError);
+    public handleConsumerPortabilityError(_consumerPortabilityError: string): void {
     }
 
-    public handleConsumerPortabilityResponse(consumerPortabilityResponse: string): void {
-        console.log('handleConsumerPortabilityResponse', consumerPortabilityResponse);
+    public handleConsumerPortabilityResponse(_consumerPortabilityResponse: string): void {
     }
 
-    public handleConsumerRemoveError(consumerRemoveError: string): void {
-        console.log('handleConsumerRemoveError', consumerRemoveError);
+    public handleConsumerRemoveError(_consumerRemoveError: string): void {
     }
 
-    public handleConsumerRemoveResponse(consumerRemoveResponse: string): void {
-        console.log('handleConsumerRemoveResponse', consumerRemoveResponse);
+    public handleConsumerRemoveResponse(_consumerRemoveResponse: string): void {
     }
 }

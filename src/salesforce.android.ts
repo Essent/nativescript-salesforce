@@ -27,23 +27,17 @@ export class SalesforceDMP implements CommonSalesforceDMP {
         });
 
         let kruxConsentCallback = new com.krux.androidsdk.aggregator.KruxConsentCallback({
-            handleConsentGetResponse: (consentGetResponse: string) => {
-                console.log('handleConsentGetResponse', consentGetResponse);
+            handleConsentGetResponse: (_consentGetResponse: string) => {
             },
-            handleConsentGetError: (consentGetError: string) => {
-                console.log('handleConsentGetError', consentGetError);
+            handleConsentGetError: (_consentGetError: string) => {
             },
-            handleConsentSetResponse: (consentSetResponse: string) => {
-                console.log('handleConsentSetResponse', consentSetResponse);
+            handleConsentSetResponse: (_consentSetResponse: string) => {
             },
-            handleConsentSetError: (consentSetError: string) => {
-                console.log('handleConsentSetError', consentSetError);
+            handleConsentSetError: (_consentSetError: string) => {
             },
-            handleConsumerRemoveResponse: (removeResponse: string) => {
-                console.log('handleConsumerRemoveResponse', removeResponse);
+            handleConsumerRemoveResponse: (_removeResponse: string) => {
             },
-            handleConsumerRemoveError: (removeError: string) => {
-                console.log('handleConsumerRemoveError', removeError);
+            handleConsumerRemoveError: (_removeError: string) => {
             }
         });
 
