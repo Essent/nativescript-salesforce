@@ -1,4 +1,4 @@
-import { CommonSalesforceDMP } from './salesforce.common';
+import { CommonSalesforceDMP, KeyValue } from './salesforce.common';
 
 declare const KruxTracker;
 declare const KruxConsentCallback;
@@ -32,16 +32,7 @@ export class SalesforceDMP implements CommonSalesforceDMP {
         this.kruxTracker.fireEventEventAttributesWithError(event, eventAttributes);
     }
 
-    public setConsent(): void {
-        // set all possible values to 1 except "Sharing Data" (sh) which should be 0
-        let consentAttributes = NSMutableDictionary.alloc().init();
-        consentAttributes.setValueForKey("1","pr");
-        consentAttributes.setValueForKey("1","dc");
-        consentAttributes.setValueForKey("1","al");
-        consentAttributes.setValueForKey("1","tg");
-        consentAttributes.setValueForKey("1","cd");
-        consentAttributes.setValueForKey("0","sh");
-        consentAttributes.setValueForKey("1","re");
+    public setConsent(consentAttributes: any): void {
         this.kruxTracker.consentSetRequest(consentAttributes)
     }
 
@@ -50,7 +41,16 @@ export class SalesforceDMP implements CommonSalesforceDMP {
     }
 
     public removeConsent(): void {
-        this.kruxTracker.consumerRemoveRequest(null);
+        const consentAttributes: KeyValue<string> = {
+            pr: '0',
+            dc: '0',
+            al: '0',
+            tg: '0',
+            cd: '0',
+            sh: '0',
+            re: '0'
+        };
+        this.kruxTracker.consentSetRequest(consentAttributes)
     }
 }
 

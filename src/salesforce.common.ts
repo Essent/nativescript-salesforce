@@ -6,7 +6,7 @@ export interface CommonSalesforceDMP {
 
     fireEvent(event: string, eventAttributes: any): void;
 
-    setConsent(): void;
+    setConsent(consentAttributes: any): void;
 
     getConsent(): void;
 

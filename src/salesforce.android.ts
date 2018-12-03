@@ -58,17 +58,8 @@ export class SalesforceDMP implements CommonSalesforceDMP {
         this.kruxEventAggregator.fireEvent(event, this.keyValuesToBundle(eventAttributes));
     }
 
-    public setConsent(): void {
-        // set all possible values to 1 except "Sharing Data" (sh) which should be 0
-        let attributeBundle = new android.os.Bundle();
-        attributeBundle.putInt("pr", 1);
-        attributeBundle.putInt("dc", 1);
-        attributeBundle.putInt("al", 1);
-        attributeBundle.putInt("tg", 1);
-        attributeBundle.putInt("cd", 1);
-        attributeBundle.putInt("sh", 0);
-        attributeBundle.putInt("re", 1);
-        this.kruxEventAggregator.consentSetRequest(attributeBundle);
+    public setConsent(consentAttributes: any): void {
+        this.kruxEventAggregator.consentSetRequest(this.keyValuesToBundle(consentAttributes));
     }
 
     public getConsent(): void {
@@ -76,7 +67,16 @@ export class SalesforceDMP implements CommonSalesforceDMP {
     }
 
     public removeConsent(): void {
-        this.kruxEventAggregator.consumerRemoveRequest(null);
+        const consentAttributes: KeyValue<string> = {
+            pr: '0',
+            dc: '0',
+            al: '0',
+            tg: '0',
+            cd: '0',
+            sh: '0',
+            re: '0'
+        };
+        this.kruxEventAggregator.consentSetRequest(this.keyValuesToBundle(consentAttributes));
     }
 
     private keyValuesToBundle(keyValues: KeyValue<any>): any {
