@@ -20,6 +20,7 @@
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
 	<application
+		android:networkSecurityConfig="@xml/network_security_config"
 		android:name="com.tns.NativeScriptApplication"
 		android:allowBackup="true"
 		android:icon="@drawable/icon"
@@ -42,5 +43,6 @@
 		<activity android:name="com.tns.ErrorReportActivity"/>
 
 		<service android:name="com.krux.androidsdk.aggregator.EventPublisherService" android:enabled="true" />
+		<service android:name="com.krux.androidsdk.aggregator.ConsentService" android:enabled="true" />
 	</application>
 </manifest>

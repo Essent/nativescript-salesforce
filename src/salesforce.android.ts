@@ -25,7 +25,23 @@ export class SalesforceDMP implements CommonSalesforceDMP {
                 // Do something with segments.
             }
         });
-        this.kruxEventAggregator.initialize(application.android.context, configId, kruxSegmentsCallback , debug);
+
+        let kruxConsentCallback = new com.krux.androidsdk.aggregator.KruxConsentCallback({
+            handleConsentGetResponse: (_consentGetResponse: string) => {
+            },
+            handleConsentGetError: (_consentGetError: string) => {
+            },
+            handleConsentSetResponse: (_consentSetResponse: string) => {
+            },
+            handleConsentSetError: (_consentSetError: string) => {
+            },
+            handleConsumerRemoveResponse: (_removeResponse: string) => {
+            },
+            handleConsumerRemoveError: (_removeError: string) => {
+            }
+        });
+
+        this.kruxEventAggregator.initialize(application.android.context, configId, kruxSegmentsCallback , debug, kruxConsentCallback);
     }
 
     public trackPageView(page: string, pageAttributes: any, userAttributes: any): void {
@@ -34,6 +50,27 @@ export class SalesforceDMP implements CommonSalesforceDMP {
 
     public fireEvent(event: string, eventAttributes: any): void {
         this.kruxEventAggregator.fireEvent(event, this.keyValuesToBundle(eventAttributes));
+    }
+
+    public setConsent(consentAttributes: any): void {
+        this.kruxEventAggregator.consentSetRequest(this.keyValuesToBundle(consentAttributes));
+    }
+
+    public getConsent(): void {
+        this.kruxEventAggregator.consentGetRequest(null);
+    }
+
+    public removeConsent(): void {
+        const consentAttributes: KeyValue<string> = {
+            pr: '0',
+            dc: '0',
+            al: '0',
+            tg: '0',
+            cd: '0',
+            sh: '0',
+            re: '0'
+        };
+        this.kruxEventAggregator.consentSetRequest(this.keyValuesToBundle(consentAttributes));
     }
 
     private keyValuesToBundle(keyValues: KeyValue<any>): any {

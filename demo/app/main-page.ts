@@ -25,3 +25,23 @@ export function fireEvent(_args: any) {
     };
     SalesforceDMP.getInstance().fireEvent('TestEvent', attributes);
 }
+
+export function setConsent(_args: any) {
+    const consentAttributes: KeyValue<string> = {
+        pr: '1',
+        dc: '1',
+        al: '1',
+        tg: '1',
+        cd: '1',
+        sh: '0',
+        re: '1'
+    };
+    SalesforceDMP.getInstance().setConsent(consentAttributes);
+}
+
+export function getConsent(_args: any) {
+    SalesforceDMP.getInstance().getConsent();
+}
+export function removeConsent(_args: any) {
+    SalesforceDMP.getInstance().removeConsent();
+}
