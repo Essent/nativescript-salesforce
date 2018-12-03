@@ -42,6 +42,7 @@ At the launch of your app call `initialize` with your config id:
 SalesforceDMP.getInstance().initialize('YOUR_CONFIG_ID', true);
 ```
 
+### Consent
 
 Before using Salesforce DMP the user needs to give consent. More information about these flags can be found on the [Salesforce DMP website](https://konsole.zendesk.com/hc/en-us/articles/360000486853-Consumer-Rights-Management-Concepts-Glossary-of-Terms).  
 To set the consent:
@@ -62,6 +63,8 @@ To quickly remove all consent flags:
 ```ts
 SalesforceDMP.getInstance().removeConsent();
 ```
+
+### Tracking
 
 To track page views call `trackPageView` (optionally you can use pageAttributes and userAttributes):
 ```ts
