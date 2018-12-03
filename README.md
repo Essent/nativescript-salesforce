@@ -44,7 +44,7 @@ SalesforceDMP.getInstance().initialize('YOUR_CONFIG_ID', true);
 
 ### Consent
 
-Before using Salesforce DMP the user needs to give consent. More information about these flags can be found on the [Salesforce DMP website](https://konsole.zendesk.com/hc/en-us/articles/360000486853-Consumer-Rights-Management-Concepts-Glossary-of-Terms).  
+Before using Salesforce DMP the user needs to give consent. More information about these flags can be found in [this support article](https://konsole.zendesk.com/hc/en-us/articles/360000486853-Consumer-Rights-Management-Concepts-Glossary-of-Terms).  
 To set the consent:
 ```ts
 const consentAttributes: KeyValue<string> = {
