@@ -19,11 +19,9 @@ export class SalesforceDMP implements CommonSalesforceDMP {
         return SalesforceDMP.instance;
     }
 
-    public initialize(configId: string, debug: boolean): void {
+    public initialize(configId: string, debug: boolean, getSegmentsCallBack?: (_segments: string) => void): void {
         let kruxSegmentsCallback = new com.krux.androidsdk.aggregator.KruxSegments({
-            getSegments: (_segments: string) => {
-                // Do something with segments.
-            }
+            getSegments: getSegmentsCallBack ? getSegmentsCallBack : (_segments) => {}
         });
 
         let kruxConsentCallback = new com.krux.androidsdk.aggregator.KruxConsentCallback({
