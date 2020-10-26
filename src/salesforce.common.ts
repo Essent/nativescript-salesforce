@@ -1,6 +1,6 @@
 export interface CommonSalesforceDMP {
 
-    initialize(configId: string, debug: boolean): void;
+    initialize(configId: string, debug: boolean, getSegmentsCallBack?: (_segments: string) => void): void;
 
     trackPageView(page: string, pageAttributes: any, userAttributes: any): void;
 

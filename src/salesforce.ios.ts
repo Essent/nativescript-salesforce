@@ -19,7 +19,7 @@ export class SalesforceDMP implements CommonSalesforceDMP {
         return SalesforceDMP.instance;
     }
 
-    public initialize(configId: string, debug: boolean): void {
+    public initialize(configId: string, debug: boolean, getSegmentsCallBack?: (_segments: string) => void): void {
         const callback = KruxConsentCallbackImpl.alloc().init();
         this.kruxTracker = KruxTracker.sharedEventTrackerWithConfigIdDebugFlagDryRunFlagConsentCallback(configId, debug, false, callback)
     }
